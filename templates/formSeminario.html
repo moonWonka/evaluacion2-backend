@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEMINARIO</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'agregar.css' %}">
+</head>
+<body>
+  <div class="bg-light container rounded">
+    <div class="text-center mb-4">
+      <h1 class="display-1 text-info">Formulario de Seminario</h1>
+    </div>
+    <div class="form-container ">
+      <form class="formSeminario container border border-light-subtle" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          {{ form.nombre.label_tag }}
+          {{ form.nombre }}
+        </div>
+        <div class="mb-3">
+          {{ form.telefono.label_tag }}
+          {{ form.telefono }}
+        </div>
+        <div class="mb-3">
+          {{ form.fecha.label_tag }}
+          {{ form.fecha }}
+        </div>
+        <div class="mb-3">
+          {{ form.organizacion.label_tag }}
+          {{ form.organizacion }}
+        </div>
+        <div class="mb-3">
+          {{ form.email.label_tag }}
+          {{ form.email }}
+        </div>
+        <div class="mb-3">
+          {{ form.profesion.label_tag }}
+          {{ form.profesion }}
+        </div>
+        <div class="mb-3">
+          {{ form.observaciones.label_tag }}
+          {{ form.observaciones }}
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="/" class="btn btn-secondary">Volver</a>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
